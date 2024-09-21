@@ -1,4 +1,4 @@
-setwd("/Users/gunnjoensen/Documents/DTU/Correlated Data/Project 1/")
+#setwd("/Users/gunnjoensen/Documents/DTU/Correlated Data/Project 1/")
 
 # File Description -------------------------------------------------------------
 #
