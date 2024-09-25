@@ -27,8 +27,8 @@ N=ni*ng #Total number of observations
 
 set.seed(1)
 df10045 <- data.frame( sample = 1:(ni*ng),
-                  group = factor(rep(1:ng, each = ni)),
-                  epsilon = rnorm(n = ni*ng, mean = 0, sd = sigma_e))
+                       group = factor(rep(1:ng, each = ni)),
+                       epsilon = rnorm(n = ni*ng, mean = 0, sd = sigma_e))
 
 # epsilon: N(0,1)
 df10045$ai<-0.0
@@ -52,14 +52,14 @@ head(df10045,22)
 
 par(mfrow=c(1,2))
 with(df10045, stripchart(y ~ group, xlab='group', ylab='y', 
-                    vertical=TRUE,cex=1.0,pch=16, las=1, col=2:11))
+                         vertical=TRUE,cex=1.0,pch=16, las=1, col=2:11))
 
 points(1:5, ymeans10045, pch = 17, cex = 1.2, col = "black")
 abline(h=mean(df10045$y), lty = 2)
 title(main=list("Response (y), group means and overall mean \n N=100 and ICC=0.45",cex=1, col="black", font=3))
 
 with(df10045, stripchart(ai ~ group, xlab='group', ylab='a', 
-                    vertical=TRUE,cex=1.0,pch=16, las=1, col=2:11))
+                         vertical=TRUE,cex=1.0,pch=16, las=1, col=2:11))
 
 abline(h=(mean(df10045$ai)), lty = 2, col= "black")
 title(main=list("Random effects for the groups (ai) \n N=100 and ICC=0.45",
@@ -72,8 +72,8 @@ summary(m_lmer10045)
 #Mu=15.2258
 
 #Estimated ICC
-0.6716 / (0.6716 + 0.8195)
-#0.4504057
+0.6716 / (0.6716 + 0.8363)
+#0.4453876
 
 ## Confidence interval for mean:
 confint(m_lmer10045)
@@ -96,8 +96,8 @@ N=ni*ng #Total number of observations
 
 set.seed(1)
 df100045 <- data.frame( sample = 1:(ni*ng),
-                       group = factor(rep(1:ng, each = ni)),
-                       epsilon = rnorm(n = ni*ng, mean = 0, sd = sigma_e))
+                        group = factor(rep(1:ng, each = ni)),
+                        epsilon = rnorm(n = ni*ng, mean = 0, sd = sigma_e))
 
 # epsilon: N(0,1)
 df100045$ai<-0.0
@@ -122,14 +122,14 @@ head(df100045,22)
 
 par(mfrow=c(1,2))
 with(df100045, stripchart(y ~ group, xlab='group', ylab='y', 
-                         vertical=TRUE,cex=1.0,pch=16, las=1, col=2:11))
+                          vertical=TRUE,cex=1.0,pch=16, las=1, col=2:11))
 
 points(1:5, ymeans100045, pch = 17, cex = 1.2, col = "black")
 abline(h=mean(df100045$y), lty = 2)
 title(main=list("Response (y), group means and overall mean \n N=1000 and ICC=0.45",cex=1, col="black", font=3))
 
 with(df100045, stripchart(ai ~ group, xlab='group', ylab='a', 
-                         vertical=TRUE,cex=1.0,pch=16, las=1, col=2:11))
+                          vertical=TRUE,cex=1.0,pch=16, las=1, col=2:11))
 
 abline(h=(mean(df100045$ai)), lty = 2, col= "black")
 title(main=list("Random effects for the groups (ai) \n N=1000 and ICC=0.45",
@@ -142,8 +142,8 @@ summary(m_lmer100045)
 #Mu=15.1053
 
 #Estimated ICC
-0.6955 / (0.6955 + 0.8339)
-#0.4547535
+0.6955 / (0.6955 + 1.0725)
+# 0.3933824
 
 ## Confidence interval for mean:
 confint(m_lmer100045)
@@ -222,8 +222,8 @@ summary(m_lmer10095)
 #Mu=15.672
 
 #Estimated ICC
-17.2827 / (17.2827  + 4.1572)
-#0.8060998
+17.2827 / (17.2827  +  0.8363)
+#0.953844
 
 ## Confidence interval for mean:
 confint(m_lmer10095)
@@ -251,8 +251,8 @@ N=ni*ng #Total number of observations
 
 set.seed(1)
 df100095 <- data.frame( sample = 1:(ni*ng),
-                       group = factor(rep(1:ng, each = ni)),
-                       epsilon = rnorm(n = ni*ng, mean = 0, sd = sigma_e))
+                        group = factor(rep(1:ng, each = ni)),
+                        epsilon = rnorm(n = ni*ng, mean = 0, sd = sigma_e))
 
 # epsilon: N(0,1)
 df100095$ai<-0.0
@@ -276,14 +276,14 @@ head(df100095,22)
 
 par(mfrow=c(1,2))
 with(df100095, stripchart(y ~ group, xlab='group', ylab='y', 
-                         vertical=TRUE,cex=1.0,pch=16, las=1, col=2:11))
+                          vertical=TRUE,cex=1.0,pch=16, las=1, col=2:11))
 
 points(1:5, ymeans100095, pch = 17, cex = 1.2, col = "black")
 abline(h=mean(df100095$y), lty = 2)
 title(main=list("Response (y), group means and overall mean \n N=1000 and ICC=0.95",cex=1, col="black", font=3))
 
 with(df100095, stripchart(ai ~ group, xlab='group', ylab='a', 
-                         vertical=TRUE,cex=1.0,pch=16, las=1, col=2:11))
+                          vertical=TRUE,cex=1.0,pch=16, las=1, col=2:11))
 
 abline(h=(mean(df100095$ai)), lty = 2, col= "black")
 title(main=list("Random effects for the groups (ai) \n N=1000 and ICC=0.95",
@@ -296,8 +296,8 @@ summary(m_lmer100095)
 #Mu=15.552
 
 #Estimated ICC
-17.265 / (17.265  + 4.155)
-#0.8060224
+17.265 / (17.265  + 1.073)
+# 0.9414876
 
 ## Confidence interval for mean:
 confint(m_lmer100095)
@@ -331,8 +331,8 @@ N=ni*ng #Total number of observations
 
 set.seed(1)
 df100 <- data.frame( sample = 1:(ni*ng),
-                        group = factor(rep(1:ng, each = ni)),
-                        epsilon = rnorm(n = ni*ng, mean = 0, sd = sigma_e))
+                     group = factor(rep(1:ng, each = ni)),
+                     epsilon = rnorm(n = ni*ng, mean = 0, sd = sigma_e))
 
 # epsilon: N(0,1)
 df100$ai<-0.0
@@ -356,14 +356,14 @@ head(df100,22)
 
 par(mfrow=c(1,2))
 with(df100, stripchart(y ~ group, xlab='group', ylab='y', 
-                          vertical=TRUE,cex=1.0,pch=16, las=1, col=2:11))
+                       vertical=TRUE,cex=1.0,pch=16, las=1, col=2:11))
 
 points(1:5, ymeans100, pch = 17, cex = 1.2, col = "black")
 abline(h=mean(df100$y), lty = 2)
 title(main=list("Response (y), group means and overall mean \n N=100 and ICC=0",cex=1, col="black", font=3))
 
 with(df100, stripchart(ai ~ group, xlab='group', ylab='a', 
-                          vertical=TRUE,cex=1.0,pch=16, las=1, col=2:11))
+                       vertical=TRUE,cex=1.0,pch=16, las=1, col=2:11))
 
 abline(h=(mean(df100$ai)), lty = 2, col= "black")
 title(main=list("Random effects for the groups (ai) \n N=100 and ICC=0",
@@ -377,8 +377,8 @@ summary(m_lmer100)
 #Mu=15.10889
 
 #Estimated ICC
-0 / (0  + 0)
-#NA
+0 / (0  + 0.8068)
+# 0
 
 ## Confidence interval for mean:
 confint(m_lmer100)
@@ -401,8 +401,8 @@ N=ni*ng #Total number of observations
 
 set.seed(1)
 df1000 <- data.frame( sample = 1:(ni*ng),
-                     group = factor(rep(1:ng, each = ni)),
-                     epsilon = rnorm(n = ni*ng, mean = 0, sd = sigma_e))
+                      group = factor(rep(1:ng, each = ni)),
+                      epsilon = rnorm(n = ni*ng, mean = 0, sd = sigma_e))
 
 # epsilon: N(0,1)
 df1000$ai<-0.0
@@ -426,14 +426,14 @@ head(df1000,22)
 
 par(mfrow=c(1,2))
 with(df1000, stripchart(y ~ group, xlab='group', ylab='y', 
-                       vertical=TRUE,cex=1.0,pch=16, las=1, col=2:11))
+                        vertical=TRUE,cex=1.0,pch=16, las=1, col=2:11))
 
 points(1:5, ymeans1000, pch = 17, cex = 1.2, col = "black")
 abline(h=mean(df1000$y), lty = 2)
 title(main=list("Response (y), group means and overall mean \n N=1000 and ICC=0",cex=1, col="black", font=3))
 
 with(df1000, stripchart(ai ~ group, xlab='group', ylab='a', 
-                       vertical=TRUE,cex=1.0,pch=16, las=1, col=2:11))
+                        vertical=TRUE,cex=1.0,pch=16, las=1, col=2:11))
 
 abline(h=(mean(df1000$ai)), lty = 2, col= "black")
 title(main=list("Random effects for the groups (ai) \n N=1000 and ICC=0",
@@ -446,7 +446,7 @@ summary(m_lmer1000)
 #Mu=14.98835
 
 #Estimated ICC
-0 / (0  + 0)
+0 / (0  + 1.071 )
 #NA
 
 ## Confidence interval for mean:
@@ -586,7 +586,7 @@ plots <- list(
   dotplot(ranef(m_lmer10095, condVar = TRUE), strip = FALSE, sub = "N=100 and ICC=0.95"),
   dotplot(ranef(m_lmer1000, condVar = TRUE), strip = FALSE, sub = "N=1000 and ICC=0"),
   dotplot(ranef(m_lmer100045, condVar = TRUE), strip = FALSE, sub = "N=1000 and ICC=0.45"),
-  dotplot(ranef(m_lmer100095, condVar = TRUE), strip = FALSE, sub = "N=1000 and ICC=0.45")
+  dotplot(ranef(m_lmer100095, condVar = TRUE), strip = FALSE, sub = "N=1000 and ICC=0.95")
 )
 
 # Create a function to capture and convert each plot to a grob
